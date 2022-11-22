@@ -5,6 +5,9 @@ namespace App\Providers;
 use App\Actions\Jetstream\DeleteUser;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Jetstream\Jetstream;
+use Laravel\Fortify\Fortify;
+use Illuminate\Http\Request;
+// use Laravel\Fortify;
 
 class JetstreamServiceProvider extends ServiceProvider
 {
@@ -25,6 +28,8 @@ class JetstreamServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        
+
         $this->configurePermissions();
 
         Jetstream::deleteUsersUsing(DeleteUser::class);

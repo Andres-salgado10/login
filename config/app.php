@@ -159,6 +159,7 @@ return [
         /*
          * Laravel Framework Service Providers...
          */
+        Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
@@ -212,6 +213,7 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
+        'NoCaptcha' => Anhskohbo\NoCaptcha\Facades\NoCaptcha::class,
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
 

@@ -37,6 +37,11 @@
                 <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
             </div>
 
+            <div class="form-group mt-3">
+                {!! NoCaptcha::renderJs() !!}
+                {!! NoCaptcha::display() !!}
+            </div>
+
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                 <div class="mt-4">
                     <x-jet-label for="terms">
@@ -54,14 +59,9 @@
                 </div>
             @endif
 
+
             <div class="flex items-center justify-end mt-4">
-                <div class="g-recaptcha" data-sitekey="your_site_key"></div>
-                @if(session::has('g-recaptcha-response'))
-                <p class="alert {{session::get('alert-class','alert_info')}}">
-                    {{session::get('g-recaptcha-response')}}
-                </p>
-                @endif
-                
+            
                 </a>
 
                 <x-jet-button class="ml-4">
